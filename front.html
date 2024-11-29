@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body>
+    <label for="pergunta">Pergunta pro Gemini</label>
+    <input type="text" id="pergunta">
+    <button onclick="perguntar()">Enviar</button>
+
+    <script>
+        async function perguntar(){
+            const perguntaValue = document.getElementById('pergunta').value;
+            const conexao = await fetch("http://localhost:3000/pergunta", {
+        method: "POST",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({
+            "pergunta" : 'Qual o melhor brawler no meta atual de Brawl Stars?'
+        })
+    });
+
+    const reposta = await conexao.json();
+            console.log(resposta)
+        }
+    </script>
+</body>
+</html>

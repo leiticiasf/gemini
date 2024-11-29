@@ -1,0 +1,12 @@
+GET http://localhost:3000/
+
+###
+POST http://localhost:3000/pergunta
+Content-Type: application/json
+
+{
+    "pergunta" : "qual a capital do brasil e quantas cidades tem?"
+}
+
+###
+GET http://localhost:3000/pergunta
